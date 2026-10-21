@@ -1,0 +1,24 @@
+ORGTEC - pasaje a GitHub Pages
+
+PASO 1 (Firebase, 1 minuto)
+ - Entrá a console.firebase.google.com -> proyecto orgtec -> Realtime Database -> pestaña "Reglas".
+ - Borrá lo que hay, pegá TODO el contenido de reglas_firebase.json y tocá "Publicar".
+ (Sirve para que ande el Foro, el chat y la lista fija de correos. Los datos que ya hay no se tocan.)
+
+PASO 2 (GitHub)
+ - Creá un repositorio nuevo (público), por ejemplo "orgtec".
+ - "Add file" -> "Upload files" y arrastrá estos 6 archivos (sin la carpeta, sin el zip):
+   index.html, manifest.webmanifest, sw.js, icon-192.png, icon-512.png, icon-maskable-512.png
+ - NO subas reglas_firebase.json ni LEEME.txt (el de reglas tiene tu código de administrador).
+ - "Commit changes".
+ - Settings -> Pages -> Source: "Deploy from a branch" -> Branch: main / (root) -> Save.
+ - En 1 o 2 minutos queda en https://TU-USUARIO.github.io/orgtec/
+
+PASO 3
+ - Abrí ese link y entrá con tu usuario y contraseña de siempre. Los usuarios, preventivos marcados y comentarios siguen igual.
+ - En Correo -> "Personal que ingresa": cargá la lista una vez y tocá "Guardar como lista de todos".
+
+PASO 4 (APK)
+ - En pwabuilder.com pegá el link de GitHub Pages y generá el paquete Android.
+
+Cambios respecto a la versión de Claude: no se pueden subir fotos al Foro, y ya no se lee el Excel automático.
