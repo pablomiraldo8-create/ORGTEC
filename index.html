@@ -837,10 +837,9 @@ function vWaze(st){if(st.la==null||st.lo==null){vCard('<div class="vt">📍 '+es
  try{const a=document.createElement("a");a.href=url;a.target="_blank";a.rel="noopener";document.body.appendChild(a);a.click();a.remove()}catch(e){}
  vCard('<div class="vt">🧭 Yendo a '+esc(st.n)+'<button class="vx" data-v="x">✕</button></div><div>'+esc(st.s)+(st.d?" · "+esc(st.d):"")+'</div><a class="vp wz" target="_blank" rel="noopener" href="'+url+'">Abrir Waze</a><div class="vh">Si Waze no se abrió solo, tocá el botón.</div>');VTMR=setTimeout(vHide,12000)}
 function vLocate(st){vHide();vSnd.ok();vmode="m";qs="";qsP="";try{$("q").value="";$("qp").value=""}catch(e){}
- const inP=st.m.includes(cur)&&DEP.has(st.d||"Sin depto")&&tecOK(st);
- setTab(inP?"p":"s");
+ if(tab!="p"&&tab!="s")setTab("s");else{sel=null;sheet();applyView();render()}
  if(st.la==null||st.lo==null){open(st.n);msg(st.n+" no tiene ubicación en el mapa");return}
- const p=pins.find(q=>q.s.n===st.n);if(p){z=2500;tx=M.clientWidth/2-p.X*z;ty=M.clientHeight*.3-p.Y*z;layout()}
+ const p=pins.find(q=>q.s.n===st.n);if(p){z=2500;tx=M.clientWidth/2-p.X*z;ty=M.clientHeight*.3-p.Y*z;layout()}else if(tab=="p")msg(st.n+" no está en los preventivos de este mes o filtros");
  open(st.n)}
 const vAct=(st,m)=>m==="loc"?vLocate(st):vWaze(st);
 function vHandle(alts){vFinish();const heard=alts[0]||"";const R=vMatch(alts),mode=vMode(alts);
